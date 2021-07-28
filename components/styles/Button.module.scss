@@ -1,0 +1,15 @@
+.container_button_primary_grow {
+  gap: 12px;
+  width: 100%;
+  display: flex;
+}
+
+.button_primary_grow {
+  color: #880088;
+  flex-grow: 1;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  background-color: #f5f5ff;
+}

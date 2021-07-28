@@ -1,0 +1,25 @@
+.container_field_primary {
+  width: 100%;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+
+.field_primary {
+  width: 100%;
+  margin-bottom: 24px;
+
+  .input {
+    width: 100%;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border-bottom: 1px #999 solid;
+  }
+
+  .input::placeholder {
+    text-transform: capitalize;
+  }
+
+  .input:focus {
+    border-bottom: 1px #880088 solid;
+  }
+}
