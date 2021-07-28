@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import styles from './Main.module.scss';
 import Button from '../../components/Button';
 
@@ -6,6 +7,8 @@ import Button from '../../components/Button';
 class MainUbication extends React.Component {
   constructor(props) {
     super(props);
+    this.mapActions = props.mapActions;
+    this.mapState = props.mapState;
     this.parent = props.parent;
     this.sheep = props.parent.sheep;
   }
@@ -20,8 +23,7 @@ class MainUbication extends React.Component {
             <img src="/image/Search_1.svg" className={styles.image}/>
             <div className={styles.body}>
               <p className={styles.big_sentence}>
-                selecciona en el mapa donde te
-                encuentras
+                {this.mapState.selectedProduct.ubication}
               </p>
             </div>
             <div className={styles.footer}>
@@ -38,4 +40,20 @@ class MainUbication extends React.Component {
   }
 }
 
-export default MainUbication;
+const mapStateToProps = ({productReducer})=> {
+  return {
+    mapState: {
+      selectedProduct: productReducer.selectedProduct
+    }
+  }
+}
+
+const mapActionsToProps = (dispath)=> {
+  return {
+    mapActions: {
+
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(MainUbication);

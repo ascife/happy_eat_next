@@ -16,7 +16,7 @@ class HeaderUbication extends React.Component {
       <>
         <header>
           <Nav.Secondary 
-            label="Buscar"
+            label="Ubicacion"
             onBack={ev=>parent.goToPage("/home")}/>
         </header>
       </>
