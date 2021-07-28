@@ -12,7 +12,11 @@ function Init(props) {
     })
   }, [dispath])
 
-  return props.children;
+  return (
+    <>
+      {props.children}
+    </>
+  )
 }
 
 export default Init;

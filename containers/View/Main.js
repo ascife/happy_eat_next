@@ -27,7 +27,7 @@ class MainView extends React.Component {
             </div>
             <div className={styles.footer}>
               <Button.ContPrimaryGrow>
-                <Button.PrimaryGrow onClick={this.parent.back()}>
+                <Button.PrimaryGrow onClick={ev=>this.parent.goToPage("/ubication")}>
                   Ubicación
                 </Button.PrimaryGrow>
               </Button.ContPrimaryGrow>

@@ -15,15 +15,15 @@ Card.ContProduct = function(props) {
 }
 
 Card.Product = function(props) {
-  let {image, onEnter} = props;
+  let {image, onClick} = props;
 
   return (
     <div 
-      onClick={onEnter}
+      onClick={onClick}
       className={styles.card_product} {...props}>
       <img className={styles.image} src={image}/>
 
-      <button className={styles.button} onClick={onEnter}>
+      <button className={styles.button} onClick={onClick}>
         <Icon.ArrowRight className={styles.icon}/>
       </button>
     </div>

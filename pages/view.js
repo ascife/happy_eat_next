@@ -20,6 +20,11 @@ class View extends React.Component {
     setTimeout(()=> Router.push(route), 800);
   }
 
+  back = ()=> {
+    this.sheep.setEnabled("loader")();
+    setTimeout(()=> Router.back(), 800);
+  }
+
   render = ()=> {
     let {Header, Main, Footer} = this;
     let {enabled, setEnabled} = this.sheep;

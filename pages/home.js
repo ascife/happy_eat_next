@@ -16,6 +16,10 @@ class Home extends React.Component {
   }
 
   goToPage = (route)=> {
+
+    if(route === "/home")
+      return;
+
     this.sheep.setEnabled("loader")();
     setTimeout(()=> Router.push(route), 800);
   }

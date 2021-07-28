@@ -22,12 +22,17 @@ class MainHome extends React.Component {
     let {enabled, setEnabled} = parent.sheep;
 
     let products = util.mapObject(mapState.products, (key, product)=> {
+
+      function onClick() {
+        mapActions.setSelectedProduct(product);
+        parent.goToPage("/view")
+      }
+
       return (
         <Card.Product 
           key={key}
-          onClick={ev=>mapActions.setSelectedProduct(product)}
-          image={product.imageUrl}
-          onEnter={ev=>parent.goToPage("/view")}/>
+          onClick={onClick}
+          image={product.imageUrl}/>
       )
     })
 

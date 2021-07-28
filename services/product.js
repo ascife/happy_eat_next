@@ -3,7 +3,7 @@ import util from '../util';
 
 export const getProducts = ()=> {
   return new Promise((resolve, reject)=> {
-    let url = "http://192.168.0.107:4000/products/get_all";
+    let url = `${"https://happy-eat-node.herokuapp.com"}/products/get_all`;
 
     axios.get(url)
     .then((response)=> {
@@ -14,7 +14,7 @@ export const getProducts = ()=> {
         return;
 
       let products = data.map((product)=> {
-        product.imageUrl = `http://192.168.0.107:4000/${product.imageUrl}`;
+        product.imageUrl = `${"https://happy-eat-node.herokuapp.com"}/${product.imageUrl}`;
         return product;
       })
 
@@ -25,7 +25,7 @@ export const getProducts = ()=> {
 
 export const uploadProduct = (product)=> {
   return new Promise((resolve, reject)=> {
-    let url = "http://192.168.0.107:4000/products/upload";
+    let url = `${"https://happy-eat-node.herokuapp.com"}/products/upload`;
     let formData = new FormData();
     
     util.mapObject(product, (key, value)=> {
@@ -41,7 +41,7 @@ export const uploadProduct = (product)=> {
         return;
 
       let product = data;
-      product.imageUrl = `http://192.168.0.107:4000/${product.imageUrl}`;
+      product.imageUrl = `${"https://happy-eat-node.herokuapp.com"}/${product.imageUrl}`;
       resolve(product);
     })
   })
